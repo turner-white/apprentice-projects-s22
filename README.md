@@ -1,2 +1,2 @@
 # apprentice-projects-spring22
-Repository for Apprenticeship Projects Spring 2022.
+Central Repository for Apprenticeship Projects Spring 2022.
