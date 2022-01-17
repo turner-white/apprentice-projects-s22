@@ -6,7 +6,7 @@ Central repository for App Team Carolina's Academy Apprenticeship projects for S
 
   2. [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repository to create your own copy. This will let you push your code onto GitHub without changing the starter code.
   
-    > A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
+  > A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 
   3. Clone this repository into a folder that contains all of your App Team Carolina files.
 
