@@ -36,7 +36,14 @@ struct GameView: View {
                     
                 ForEach(countries, id: \.id) { country in
                     Button(action: {
-                        self.flagTapped(country: country)
+                        if country == targetCountry {
+                            alertTitle = "Correct"
+                            score += 1
+                        } else {
+                            alertTitle = "Wrong! Thats the flag of \(country)"
+                        }
+                        
+                        showingAlert = true
                     }) {
                         FlagImage(imageName: country.name)
                     }
@@ -48,7 +55,8 @@ struct GameView: View {
                 Alert(title: Text(alertTitle),
                       message: Text("Your Score is \(score)"),
                       dismissButton: .default(Text("Continue")) {
-                          self.askQuestion()
+                          countries = CountryList.countries.shuffled().prefix(3)
+                          correctAnswerIndex = Int.random(in: 0...2)
                       })
             }
         }
@@ -57,22 +65,6 @@ struct GameView: View {
     
     var targetCountry: Country {
         return countries[correctAnswerIndex]
-    }
-    
-    func flagTapped(country: Country) {
-        if country == targetCountry {
-            alertTitle = "Correct"
-            score += 1
-        } else {
-            alertTitle = "Wrong! Thats the flag of \(country)"
-        }
-        
-        showingAlert = true
-    }
-    
-    func askQuestion() {
-        countries = CountryList.countries.shuffled().prefix(3)
-        correctAnswerIndex = Int.random(in: 0...2)
     }
 }
 
