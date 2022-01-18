@@ -1,4 +1,4 @@
-# apprentice-projects-spring22
+## apprentice-projects-spring22
 Central repository for App Team Carolina's Academy Apprenticeship projects for Spring 2022.
 
 ## Setting up your projects repository
