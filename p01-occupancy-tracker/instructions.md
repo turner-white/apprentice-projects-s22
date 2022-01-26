@@ -2,7 +2,7 @@
 
 Build a simple occupancy tracker. Here are very minimal and more fleshed out versions of this app.
 
-<img src="./Screenshots/simple counter.gif" alt="simple counter implementation" height="600">
+<img src="./Screenshots/simple counter.gif" alt="simple counter implementation" align="left" height="600">
 <img src="./Screenshots/counter.gif" alt="feature-rich counter implementation" height="600">
 
 
