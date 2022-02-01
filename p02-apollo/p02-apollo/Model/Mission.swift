@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Mission: Codable, Identifiable {
     let id: Int
@@ -20,6 +21,9 @@ struct Mission: Codable, Identifiable {
     
     var imageName: String {
         "apollo\(id)"
+    }
+    var image: Image {
+        Image(imageName)
     }
     
     var formattedLaunchDate: String {

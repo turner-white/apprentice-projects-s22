@@ -12,9 +12,24 @@ struct ContentView: View {
     let missions: [Mission] = Bundle.main.decode("missions.json")
 
     var body: some View {
-        Text("Hello, World!")
+            NavigationView {
+                    List {
+                        ForEach(missions) { mission in
+                            NavigationLink {
+                                MissionDetailView(mission: mission)
+                            } label: {
+                                MissionRow(mission: mission)
+                            }
+                        }
+                    
+                    }
+                    
+            }
+            .navigationTitle("NASA Apollo Missions")
+            
+        }
+        
     }
-}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
