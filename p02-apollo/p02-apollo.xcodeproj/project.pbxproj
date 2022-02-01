@@ -16,6 +16,7 @@
 		BDB64469278E26410030CB50 /* CrewMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB64468278E26400030CB50 /* CrewMember.swift */; };
 		BDB6446A278E27C90030CB50 /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = BDB6445E278E225A0030CB50 /* missions.json */; };
 		BDB73FD7278F69190043D263 /* MissionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB73FD6278F69190043D263 /* MissionDetailView.swift */; };
+		F634B59B27A9963C00097ABE /* MissionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F634B59A27A9963C00097ABE /* MissionRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		BDB64460278E225B0030CB50 /* Bundle+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decodable.swift"; sourceTree = "<group>"; };
 		BDB64468278E26400030CB50 /* CrewMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMember.swift; sourceTree = "<group>"; };
 		BDB73FD6278F69190043D263 /* MissionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailView.swift; sourceTree = "<group>"; };
+		F634B59A27A9963C00097ABE /* MissionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				BDB6444E278E22220030CB50 /* p02_apolloApp.swift */,
 				BDB64450278E22220030CB50 /* ContentView.swift */,
 				BDB73FD6278F69190043D263 /* MissionDetailView.swift */,
+				F634B59A27A9963C00097ABE /* MissionRow.swift */,
 				BDB6446F278E2A260030CB50 /* Model */,
 				BDB64452278E22240030CB50 /* Assets.xcassets */,
 				BDB64454278E22240030CB50 /* Preview Content */,
@@ -165,6 +168,7 @@
 				BDB64463278E225B0030CB50 /* Bundle+Decodable.swift in Sources */,
 				BDB73FD7278F69190043D263 /* MissionDetailView.swift in Sources */,
 				BDB64462278E225B0030CB50 /* Mission.swift in Sources */,
+				F634B59B27A9963C00097ABE /* MissionRow.swift in Sources */,
 				BDB6444F278E22220030CB50 /* p02_apolloApp.swift in Sources */,
 				BDB64469278E26410030CB50 /* CrewMember.swift in Sources */,
 			);
