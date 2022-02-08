@@ -15,12 +15,42 @@ struct ProfileView: View {
     let userPosts: [Post] = PostList.defaultPosts
 
     var body: some View {
-        Text("Hello, World!")
-    }
-}
+        NavigationView {
+            ScrollView {
+                Image(profileImageAddress)
+                    .resizable()
+                    .clipShape(Circle())
+                    .frame(width:180,height:180)
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Name: \(name)")
+                            .font(.title)
+                        Text("Username: @\(username)")
+                            .font(.subheadline)
+                    }
+                    Spacer()
+                    NavigationLink(destination: ProfileSettings()) {
+                        Label("Settings button", systemImage: "gearshape.fill")
+                            .labelStyle(.iconOnly)
+                            .scaledToFit()
+                    }
+                }
+                Divider()
+                ForEach(userPosts) { post in
+                    PostView(post: post)
+                }
+            }.padding(.leading)
+                .padding(.trailing)
+                .navigationTitle(Text("Profile Home"))
+                .navigationBarHidden(true)
+        }
+        }
+
+
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
     }
+}
 }

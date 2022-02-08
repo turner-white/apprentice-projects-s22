@@ -9,9 +9,41 @@ import SwiftUI
 
 struct PostView: View {
     let post: Post
-
+    @State var isLiked: Bool = false
     var body: some View {
-        Text("Hello, World!")
+        VStack (alignment: .leading){
+            HStack {
+                Image(post.authorImageAddress)
+                    .resizable()
+                    .frame(width:50,height:50)
+                    .clipShape(Circle())
+                VStack (alignment: .leading){
+                    Text(post.authorName)
+                    Text(post.authorUsername)
+                }
+                Spacer()
+                Text(post.formattedDate)
+            }
+            Text(post.postContent)
+            HStack {
+                Button {
+                    isLiked.toggle()
+                } label: {
+                    Label("\(post.likeCount)", systemImage: isLiked ? "heart.fill" : "heart")
+                }.labelStyle(.titleAndIcon)
+//                NavigationView {
+//                    NavigationLink(destination: CommentView) {
+//                        Label("\(post.commentCount)", systemImage: "bubble.right")
+//                    }
+//                }
+                Button {
+                    
+                } label: {
+                    Label("\(post.likeCount)",systemImage: "bubble.right")
+                }.labelStyle(.titleAndIcon)
+            }
+        }
+        
     }
 }
 

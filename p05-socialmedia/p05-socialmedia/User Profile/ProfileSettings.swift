@@ -9,7 +9,18 @@ import SwiftUI
 
 struct ProfileSettings: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            HStack {
+                Text("Change Name")
+                Divider()
+            
+            }
+            HStack {
+                Text("Change Username")
+                Divider()
+            }
+            Text("edit profile pic")
+        }
     }
 }
 

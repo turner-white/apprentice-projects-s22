@@ -11,7 +11,27 @@ struct HomeFeedView: View {
     let posts: [Post] = PostList.defaultPosts
     
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            ZStack (alignment: .bottomTrailing){
+                ScrollView {
+                    ForEach(posts) { post in
+                        PostView(post: post)
+                        Divider()
+                    }
+                }
+                NavigationLink(destination: NewPostView()) {
+                    Label("plus", systemImage: "plus.circle.fill")
+                        .labelStyle(.iconOnly)
+                        .foregroundColor(.blue)
+                        .imageScale(.large)
+                        .background( Circle().fill().foregroundColor(.white))
+                        
+                }
+            }.padding(.leading)
+                .padding(.trailing)
+                .navigationTitle(Text("BlueBird :)").font(.largeTitle))
+                .navigationBarHidden(true)
+        }
     }
 }
 
