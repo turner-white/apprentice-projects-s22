@@ -15,15 +15,14 @@ struct HomeFeedView: View {
             List {
                 ForEach(vm.posts) { post in
                     PostView(post: post)
-                        .listRowSeparator(.hidden)
                 }
             }
             .listStyle(.plain)
-            .refreshable {
-                await vm.fetchPosts()
-            }
             .navigationTitle("bluebird")
         }
+        .onAppear(perform: {
+            vm.fetchPosts()
+        })
     }
 }
 

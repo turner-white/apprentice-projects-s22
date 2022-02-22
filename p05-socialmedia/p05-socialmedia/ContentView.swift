@@ -9,12 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HomeFeedView()
+        TabView {
+            HomeFeedView()
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            
+            NewPostView()
+                .tabItem {
+                    Label("New Post", systemImage: "plus.circle")
+                }
+            
+            Text("Profile")
+                .tabItem {
+                    Label("Profile", systemImage: "person")
+                }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().bothColorSchemes()
     }
 }

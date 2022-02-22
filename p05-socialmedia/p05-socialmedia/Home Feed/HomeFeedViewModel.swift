@@ -12,6 +12,11 @@ class HomeFeedViewModel: ObservableObject {
     @Published var posts: [Post] = []
     
     init() {
-        posts = PostList.defaultPosts
+        fetchPosts()
+    }
+    
+    func fetchPosts() {
+        posts = PostsService.getHomeFeed()
+
     }
 }

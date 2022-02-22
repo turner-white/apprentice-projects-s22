@@ -18,7 +18,7 @@ struct Post: Identifiable, Codable {
     let postContent: String
     var likeCount: Int
     var commentCount: Int
-    
+        
     // once again, this should probably live in a post view model, but we'll add that later
     var formattedDate: String {
         let formatter = DateFormatter()
