@@ -17,6 +17,5 @@ class HomeFeedViewModel: ObservableObject {
     
     func fetchPosts() {
         posts = PostsService.getHomeFeed()
-
     }
 }
