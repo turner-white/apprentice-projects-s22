@@ -8,15 +8,27 @@
 import SwiftUI
 
 struct HomeFeedView: View {
-    let posts: [Post] = PostList.defaultPosts
-    
+    @StateObject var vm = HomeFeedViewModel()
+
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            List {
+                ForEach(vm.posts) { post in
+                    PostView(post: post)
+                        .listRowSeparator(.hidden)
+                }
+            }
+            .listStyle(.plain)
+            .refreshable {
+                await vm.fetchPosts()
+            }
+            .navigationTitle("bluebird")
+        }
     }
 }
 
 struct HomeFeedView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeFeedView()
+        HomeFeedView().bothColorSchemes()
     }
 }

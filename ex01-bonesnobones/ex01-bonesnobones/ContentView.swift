@@ -1,15 +1,16 @@
 //
 //  ContentView.swift
-//  p05-socialmedia
+//  ex01-bonesnobones
 //
-//  Created by Samuel Shi on 1/31/22.
+//  Created by Samuel Shi on 2/15/22.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HomeFeedView()
+        Text("Hello, world!")
+            .padding()
     }
 }
 
