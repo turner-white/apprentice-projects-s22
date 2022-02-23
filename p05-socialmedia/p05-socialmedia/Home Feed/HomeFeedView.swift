@@ -19,14 +19,14 @@ struct HomeFeedView: View {
                         Divider()
                     }
                 }
-                NavigationLink(destination: NewPostView()) {
-                    Label("plus", systemImage: "plus.circle.fill")
-                        .labelStyle(.iconOnly)
-                        .foregroundColor(.blue)
-                        .imageScale(.large)
-                        .background( Circle().fill().foregroundColor(.white))
-                        
-                }
+//                NavigationLink(destination: NewPostView()) {
+//                    Label("plus", systemImage: "plus.circle.fill")
+//                        .labelStyle(.iconOnly)
+//                        .foregroundColor(.blue)
+//                        .imageScale(.large)
+//                        .background( Circle().fill().foregroundColor(.white))
+//
+//                }
             }.padding(.leading)
                 .padding(.trailing)
                 .navigationTitle(Text("BlueBird :)").font(.largeTitle))

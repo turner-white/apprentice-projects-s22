@@ -19,7 +19,9 @@ struct PostView: View {
                     .clipShape(Circle())
                 VStack (alignment: .leading){
                     Text(post.authorName)
-                    Text(post.authorUsername)
+                        .font(.body)
+                    Text("@\(post.authorUsername)")
+                        .font(.subheadline)
                 }
                 Spacer()
                 Text(post.formattedDate)

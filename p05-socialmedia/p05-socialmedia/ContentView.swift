@@ -11,13 +11,17 @@ struct ContentView: View {
     @State private var selection: Tab = .home
     enum Tab {
         case home
+        case post
         case profile
     }
     var body: some View {
         TabView(selection: $selection) {
             HomeFeedView().tabItem { Label("Home", systemImage: "house") }.tag(Tab.home)
             
-            ProfileView().tabItem { Label("Profile", systemImage: "person") }.tag(Tab.profile)
+            NewPostView().tabItem { Label("Post", systemImage:
+                                            "plus.app")}.tag(Tab.post)
+            
+            ProfileView().tabItem { Label("Profile", systemImage:               "person") }.tag(Tab.profile)
         }
     }
 }
