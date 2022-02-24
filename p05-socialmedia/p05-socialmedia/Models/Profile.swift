@@ -12,5 +12,7 @@ struct Profile {
     var firstname: String
     var lastname: String
     var password: String
-    var picture: String
+    //var picture: String
+    
+    static let defaultProfile = Profile(username:"",firstname: "",lastname: "",password: "")
 }

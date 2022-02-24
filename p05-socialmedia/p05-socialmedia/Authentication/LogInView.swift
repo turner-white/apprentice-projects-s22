@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct LogInView: View {
-    @State private var signedIn: Bool = false
+    @EnvironmentObject var modelData: ModelData
+    @State var signedIn: Bool = false
     @State private var username: String = ""
     @State private var password: String = ""
     var body: some View {
         NavigationView {
             VStack(alignment:.center) {
                 Text("Bluebird!").font(.largeTitle
-                ).offset(y:-69)
+                ).offset(y:-75)
                 Image("blue-bird-vector")
                     .resizable()
                     .frame(width:300,height:300)
@@ -31,7 +32,7 @@ struct LogInView: View {
                 }
                 
                 Button("Log In") {
-                    
+                    modelData.showingLogIn.toggle()
                 }
                 .buttonStyle(.borderedProminent)
                 .dynamicTypeSize(/*@START_MENU_TOKEN@*/.xxxLarge/*@END_MENU_TOKEN@*/)

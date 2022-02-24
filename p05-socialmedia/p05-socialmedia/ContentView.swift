@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var signedIn: Bool = false
+    @EnvironmentObject var modelData: ModelData
+    //@State private var showingLogIn: Bool = true
     @State private var selection: Tab = .home
     enum Tab {
         case home
@@ -16,16 +17,22 @@ struct ContentView: View {
         case profile
     }
     var body: some View {
-        
-        TabView(selection: $selection) {
-            HomeFeedView().tabItem { Label("Home", systemImage: "house") }.tag(Tab.home)
-            
-            NewPostView().tabItem { Label("Post", systemImage:
-                                            "plus.app")}.tag(Tab.post)
-            
-            ProfileView().tabItem { Label("Profile", systemImage:               "person") }.tag(Tab.profile)
+        if !modelData.showingLogIn {
+            TabView(selection: $selection) {
+                HomeFeedView().tabItem { Label("Home", systemImage: "house") }.tag(Tab.home)
+                
+                NewPostView().tabItem { Label("Post", systemImage:
+                                                "plus.app")}.tag(Tab.post)
+                
+                ProfileView().tabItem { Label("Profile", systemImage:               "person") }.tag(Tab.profile)
+            }
         }
+        else {
+            LogInView()
+        }
+        
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
