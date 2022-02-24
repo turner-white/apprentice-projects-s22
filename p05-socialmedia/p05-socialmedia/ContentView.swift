@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var signedIn: Bool = false
     @State private var selection: Tab = .home
     enum Tab {
         case home
@@ -15,6 +16,7 @@ struct ContentView: View {
         case profile
     }
     var body: some View {
+        
         TabView(selection: $selection) {
             HomeFeedView().tabItem { Label("Home", systemImage: "house") }.tag(Tab.home)
             

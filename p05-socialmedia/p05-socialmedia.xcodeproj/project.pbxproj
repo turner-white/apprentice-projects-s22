@@ -25,6 +25,7 @@
 		F6A485B927C5761A005AC143 /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A485B827C5761A005AC143 /* NewPostView.swift */; };
 		F6A485BB27C5763C005AC143 /* HomeFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A485BA27C5763C005AC143 /* HomeFeedViewModel.swift */; };
 		F6A485BF27C6BAB6005AC143 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A485BE27C6BAB6005AC143 /* Profile.swift */; };
+		F6A485C127C6F5C2005AC143 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A485C027C6F5C2005AC143 /* TextFieldModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		F6A485B827C5761A005AC143 /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
 		F6A485BA27C5763C005AC143 /* HomeFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedViewModel.swift; sourceTree = "<group>"; };
 		F6A485BE27C6BAB6005AC143 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		F6A485C027C6F5C2005AC143 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				BD7155B027A8C90600B51278 /* View+bothColorSchemes.swift */,
+				F6A485C027C6F5C2005AC143 /* TextFieldModifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				BD7155AE27A8C8A300B51278 /* PostView.swift in Sources */,
 				BD7155A027A8C81800B51278 /* p05_socialmediaApp.swift in Sources */,
 				F6A485B527C575E8005AC143 /* PostsService.swift in Sources */,
+				F6A485C127C6F5C2005AC143 /* TextFieldModifier.swift in Sources */,
 				F6A485AF27C572A3005AC143 /* SignUpView.swift in Sources */,
 				F6A485B127C572AB005AC143 /* LogInView.swift in Sources */,
 				F6A485BF27C6BAB6005AC143 /* Profile.swift in Sources */,
