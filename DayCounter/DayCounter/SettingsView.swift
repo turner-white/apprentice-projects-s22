@@ -11,13 +11,11 @@ class SettingsViewModel: ObservableObject {
     @Published var initialDate: Date = Date()
     @Published var oneSave = false
     
-    
     init() {
         oneSave = UserDefaults.standard.bool(forKey: "oneSave")
-        if (oneSave) {
+        if oneSave {
             initialDate = UserDefaults.standard.object(forKey: "initialDate") as! Date
-        }
-        if (!oneSave) {
+        } else {
             initialDate = Date()
         }
     }
@@ -36,7 +34,7 @@ class SettingsViewModel: ObservableObject {
 }
 
 struct SettingsView: View {
-    @StateObject var vm = SettingsViewModel()
+    @ObservedObject var vm: SettingsViewModel
     
     var dateRange: ClosedRange<Date> {
         let min = Calendar.current.date(byAdding: .year, value: -1, to: vm.initialDate)!
@@ -61,6 +59,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(vm: SettingsViewModel())
     }
 }

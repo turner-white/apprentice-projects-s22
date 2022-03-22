@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    var vm = SettingsViewModel()
+    @StateObject var vm = SettingsViewModel()
+    
     var body: some View {
         NavigationView {
             VStack {
                 Text(vm.getNumDays())
                     .font(.custom("Large", size: 80))
                 .padding()
-                NavigationLink(destination: SettingsView()) {
+                NavigationLink(destination: SettingsView(vm: vm)) {
                     Label("Settings", systemImage: "gearshape")
                 }
             }
