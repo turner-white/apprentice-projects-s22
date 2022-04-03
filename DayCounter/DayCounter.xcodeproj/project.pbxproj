@@ -12,8 +12,9 @@
 		F60CE9D027E4C27500A40495 /* CounterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60CE9CF27E4C27500A40495 /* CounterWidget.swift */; };
 		F60CE9D227E4C27600A40495 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60CE9D127E4C27600A40495 /* Assets.xcassets */; };
 		F60CE9D627E4C27600A40495 /* CounterWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F60CE9CB27E4C27500A40495 /* CounterWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F60CE9DC27E4C84E00A40495 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E5BB1927CEBF4600DBBF45 /* ContentView.swift */; };
-		F60CE9DE27E4CB0F00A40495 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E5BB4127CECF2B00DBBF45 /* SettingsView.swift */; };
+		F63099EE27EA2087005083BA /* DaysStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63099ED27EA2087005083BA /* DaysStore.swift */; };
+		F63099F127EA237B005083BA /* DaysStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63099ED27EA2087005083BA /* DaysStore.swift */; };
+		F63099F327EA275E005083BA /* DaysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63099F227EA275E005083BA /* DaysViewModel.swift */; };
 		F6E5BB1827CEBF4600DBBF45 /* DayCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E5BB1727CEBF4600DBBF45 /* DayCounterApp.swift */; };
 		F6E5BB1A27CEBF4600DBBF45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E5BB1927CEBF4600DBBF45 /* ContentView.swift */; };
 		F6E5BB1C27CEBF4700DBBF45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6E5BB1B27CEBF4700DBBF45 /* Assets.xcassets */; };
@@ -34,7 +35,7 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		F6E5BB4027CEC25200DBBF45 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
@@ -50,6 +51,10 @@
 		F60CE9CF27E4C27500A40495 /* CounterWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterWidget.swift; sourceTree = "<group>"; };
 		F60CE9D127E4C27600A40495 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F60CE9D327E4C27600A40495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F63099ED27EA2087005083BA /* DaysStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysStore.swift; sourceTree = "<group>"; };
+		F63099EF27EA216B005083BA /* DayCounter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DayCounter.entitlements; sourceTree = "<group>"; };
+		F63099F027EA21F2005083BA /* CounterWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CounterWidgetExtension.entitlements; sourceTree = "<group>"; };
+		F63099F227EA275E005083BA /* DaysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysViewModel.swift; sourceTree = "<group>"; };
 		F6E5BB1427CEBF4600DBBF45 /* DayCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E5BB1727CEBF4600DBBF45 /* DayCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCounterApp.swift; sourceTree = "<group>"; };
 		F6E5BB1927CEBF4600DBBF45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +98,7 @@
 		F6E5BB0B27CEBF4600DBBF45 = {
 			isa = PBXGroup;
 			children = (
+				F63099F027EA21F2005083BA /* CounterWidgetExtension.entitlements */,
 				F6E5BB1627CEBF4600DBBF45 /* DayCounter */,
 				F60CE9CE27E4C27500A40495 /* CounterWidget */,
 				F6E5BB2C27CEC25000DBBF45 /* Frameworks */,
@@ -112,9 +118,12 @@
 		F6E5BB1627CEBF4600DBBF45 /* DayCounter */ = {
 			isa = PBXGroup;
 			children = (
+				F63099EF27EA216B005083BA /* DayCounter.entitlements */,
 				F6E5BB1727CEBF4600DBBF45 /* DayCounterApp.swift */,
 				F6E5BB1927CEBF4600DBBF45 /* ContentView.swift */,
 				F6E5BB4127CECF2B00DBBF45 /* SettingsView.swift */,
+				F63099F227EA275E005083BA /* DaysViewModel.swift */,
+				F63099ED27EA2087005083BA /* DaysStore.swift */,
 				F6E5BB1B27CEBF4700DBBF45 /* Assets.xcassets */,
 				F6E5BB1D27CEBF4700DBBF45 /* Preview Content */,
 			);
@@ -239,9 +248,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F60CE9DE27E4CB0F00A40495 /* SettingsView.swift in Sources */,
+				F63099F127EA237B005083BA /* DaysStore.swift in Sources */,
 				F60CE9D027E4C27500A40495 /* CounterWidget.swift in Sources */,
-				F60CE9DC27E4C84E00A40495 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,8 +257,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F63099EE27EA2087005083BA /* DaysStore.swift in Sources */,
 				F6E5BB4227CECF2B00DBBF45 /* SettingsView.swift in Sources */,
 				F6E5BB1A27CEBF4600DBBF45 /* ContentView.swift in Sources */,
+				F63099F327EA275E005083BA /* DaysViewModel.swift in Sources */,
 				F6E5BB1827CEBF4600DBBF45 /* DayCounterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +281,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CounterWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MUU5R72BC7;
@@ -298,6 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CounterWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MUU5R72BC7;
@@ -442,6 +454,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DayCounter/DayCounter.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -474,6 +487,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DayCounter/DayCounter.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

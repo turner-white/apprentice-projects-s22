@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var vm = SettingsViewModel()
+    @StateObject var vm = DaysViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
-                Text(vm.getNumDays())
+                Text(vm.fetchDays())
                     .font(.custom("Large", size: 80))
                 .padding()
                 NavigationLink(destination: SettingsView(vm: vm)) {
