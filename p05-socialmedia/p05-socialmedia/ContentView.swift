@@ -17,20 +17,22 @@ struct ContentView: View {
         case profile
     }
     var body: some View {
-        if !modelData.showingLogIn {
-            TabView(selection: $selection) {
-                HomeFeedView().tabItem { Label("Home", systemImage: "house") }.tag(Tab.home)
-                
-                NewPostView().tabItem { Label("Post", systemImage:
-                                                "plus.app")}.tag(Tab.post)
-                
-                ProfileView().tabItem { Label("Profile", systemImage:               "person") }.tag(Tab.profile)
-            }
+        TabView {
+            HomeFeedView()
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            
+            NewPostView()
+                .tabItem {
+                    Label("New Post", systemImage: "plus.circle")
+                }
+            
+            Text("Profile")
+                .tabItem {
+                    Label("Profile", systemImage: "person")
+                }
         }
-        else {
-            LogInView()
-        }
-        
     }
     
 }
