@@ -19,8 +19,11 @@ struct Provider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        let entry = SimpleEntry(date: Date(), milesRan: MilesRanStore.fetchMiles())
-        let timeline = Timeline(entries: [entry], policy: .never)
+        var entries: [SimpleEntry] = []
+        let currentDate = Date.now
+        let entry = SimpleEntry(date:currentDate,milesRan: MilesRanStore.fetchMiles())
+        entries.append(entry)
+        let timeline = Timeline(entries: entries, policy: .never)
         completion(timeline)
     }
 }

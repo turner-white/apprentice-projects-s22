@@ -18,7 +18,7 @@ final class MilesRanViewModel: ObservableObject {
     
     func increment(amount: Double) -> Void {
         milesRan += amount
-        MilesRanStore.save(miles: milesRan)
+        MilesRanStore.saveMiles(miles: milesRan)
         isZeroMile = false
     }
     
@@ -28,7 +28,7 @@ final class MilesRanViewModel: ObservableObject {
         } else {
             milesRan -= amount
         }
-        MilesRanStore.save(miles: milesRan)
+        MilesRanStore.saveMiles(miles: milesRan)
         
         if milesRan == 0 {
             isZeroMile = true

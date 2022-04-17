@@ -9,14 +9,13 @@ import Foundation
 import WidgetKit
 
 struct MilesRanStore {
-    static private let defaults = UserDefaults(suiteName: "turner-white")!
+    static private let defaults = UserDefaults(suiteName:"group.com.turner-white.p07-runnyy.contents")!
     //static let userDefaults = UserDefaults.standard
     static let milesKey = "miles"
     
-    static func save(miles: Double) {
+    static func saveMiles(miles: Double) {
         defaults.set(miles, forKey: milesKey)
         WidgetCenter.shared.reloadAllTimelines()
-        WidgetCenter.shared.reloadTimelines(ofKind: "runWidget")
     }
     
     static func fetchMiles() -> Double{

@@ -9,19 +9,19 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-
+    
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(),dayCount: "10")
     }
-
+    
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         let entry = SimpleEntry(date: Date(), dayCount: "10")
         completion(entry)
     }
-
+    
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
-
+        
         let currentDate = Date()
         let entry = SimpleEntry(date: currentDate, dayCount: DaysStore.fetchCalculatedDays())
         entries.append(entry)
@@ -39,18 +39,16 @@ struct SimpleEntry: TimelineEntry {
 struct CounterWidgetEntryView : View {
     //Provider.Entry is maybe auto found from the provider initializer
     var entry: SimpleEntry
-
+    
     var body: some View {
-        //Need to send string from vm here
-        //Comes from entry
-        Text("\(entry.dayCount)")
+        Text("\(entry.dayCount)").font(.custom("Big", size: 70))
     }
 }
 
 @main
 struct CounterWidget: Widget {
     let kind: String = "CounterWidget"
-
+    
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             CounterWidgetEntryView(entry: entry)
@@ -66,3 +64,4 @@ struct CounterWidget_Previews: PreviewProvider {
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
+
