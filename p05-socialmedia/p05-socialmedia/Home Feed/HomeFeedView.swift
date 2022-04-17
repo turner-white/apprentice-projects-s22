@@ -8,35 +8,26 @@
 import SwiftUI
 
 struct HomeFeedView: View {
-    let posts: [Post] = PostList.defaultPosts
-    
+    @StateObject var vm = HomeFeedViewModel()
+
     var body: some View {
         NavigationView {
-            ZStack (alignment: .bottomTrailing){
-                ScrollView {
-                    ForEach(posts) { post in
-                        PostView(post: post)
-                        Divider()
-                    }
+            List {
+                ForEach(vm.posts) { post in
+                    PostView(post: post)
                 }
-//                NavigationLink(destination: NewPostView()) {
-//                    Label("plus", systemImage: "plus.circle.fill")
-//                        .labelStyle(.iconOnly)
-//                        .foregroundColor(.blue)
-//                        .imageScale(.large)
-//                        .background( Circle().fill().foregroundColor(.white))
-//
-//                }
-            }.padding(.leading)
-                .padding(.trailing)
-                .navigationTitle(Text("BlueBird :)").font(.largeTitle))
-                .navigationBarHidden(true)
+            }
+            .listStyle(.plain)
+            .navigationTitle("bluebird")
         }
+        .onAppear(perform: {
+            vm.fetchPosts()
+        })
     }
 }
 
 struct HomeFeedView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeFeedView()
+        HomeFeedView().bothColorSchemes()
     }
 }
