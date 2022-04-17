@@ -9,43 +9,34 @@ import SwiftUI
 
 struct PostView: View {
     let post: Post
-    @State var isLiked: Bool = false
+    
     var body: some View {
-        VStack (alignment: .leading){
+        VStack(spacing: 15) {
             HStack {
                 Image(post.authorImageAddress)
                     .resizable()
-                    .frame(width:50,height:50)
+                    .frame(width: 50, height: 50)
                     .clipShape(Circle())
-                VStack (alignment: .leading){
+                
+                VStack(alignment: .leading) {
                     Text(post.authorName)
-                        .font(.body)
-                    Text("@\(post.authorUsername)")
-                        .font(.subheadline)
+                    Text(post.authorUsername)
+                        .foregroundColor(.secondary)
+                        .font(.callout)
                 }
+                
                 Spacer()
-                Text(post.formattedDate)
             }
+            
             Text(post.postContent)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
             HStack {
-                Button {
-                    isLiked.toggle()
-                } label: {
-                    Label("\(post.likeCount)", systemImage: isLiked ? "heart.fill" : "heart")
-                }.labelStyle(.titleAndIcon)
-//                NavigationView {
-//                    NavigationLink(destination: CommentView) {
-//                        Label("\(post.commentCount)", systemImage: "bubble.right")
-//                    }
-//                }
-                Button {
-                    
-                } label: {
-                    Label("\(post.likeCount)",systemImage: "bubble.right")
-                }.labelStyle(.titleAndIcon)
+                Label("\(post.likeCount)", systemImage: "heart")
+                Label("\(post.commentCount)", systemImage: "heart")
+                Spacer()
             }
         }
-        
     }
 }
 
